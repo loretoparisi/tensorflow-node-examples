@@ -1,0 +1,21 @@
+{
+  "name": "binding-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "link-local": "yalc link"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.7.2",
+    "yalc": "~1.0.0-pre.21"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "latest",
+    "tfjs-node": "link:.yalc/tfjs-node"
+  }
+}
