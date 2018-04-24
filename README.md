@@ -7,5 +7,18 @@ To run the example first install dependencies and link locally the `tfjs-node` m
 cd getting_started
 yarn
 yarn link-local tfjs-node
+```
+
+You can now run the example
+```
 node index.js
+Tensor {
+  isDisposed: false,
+  size: 1,
+  shape: [ 1, 1 ],
+  dtype: 'float32',
+  strides: [ 1 ],
+  dataId: {},
+  id: 12,
+  rankType: '2' }
 ```
