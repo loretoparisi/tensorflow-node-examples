@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "link-local": "yalc link"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -16,6 +13,6 @@
   },
   "dependencies": {
     "@tensorflow/tfjs": "latest",
-    "tfjs-node": "link:.yalc/tfjs-node"
+    "@tensorflow/tfjs-node": "^0.1.2"
   }
 }

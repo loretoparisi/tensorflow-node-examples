@@ -1,8 +1,8 @@
 
 
+require('@tensorflow/tfjs-node');
 var tf = require('@tensorflow/tfjs');
-var bindTensorFlowBackend =  require('tfjs-node').bindTensorFlowBackend;
-bindTensorFlowBackend();
+tf.setBackend('tensorflow');
 
 // Tiny TFJS train / predict example.
 function myFirstTfjs() {
@@ -28,7 +28,7 @@ function myFirstTfjs() {
     var predict=
         model.predict(tf.tensor2d([20], [1, 1]));
 
-    console.log( predict );
+    console.log( "PREDICT\n", predict );
   }
   
   myFirstTfjs();

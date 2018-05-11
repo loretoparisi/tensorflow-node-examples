@@ -1,8 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "tfjs-node": {
-      "signature": "f829a2362799ec9fef86e467ed486079"
-    }
-  }
-}
