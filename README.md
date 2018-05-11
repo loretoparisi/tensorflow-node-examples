@@ -8,8 +8,7 @@ Tensorflow.js for Node.js (namely `tfjs-node`) is currently in development statu
 To run the example first install dependencies and link locally the `tfjs-node` module
 ```
 cd getting_started
-yarn
-yarn link-local tfjs-node
+npm install
 ```
 
 You can now run the example
