@@ -1,8 +1,6 @@
 
 
-require('@tensorflow/tfjs-node');
 var tf = require('@tensorflow/tfjs');
-tf.setBackend('tensorflow');
 
 // Tiny TFJS train / predict example.
 function myFirstTfjs() {
@@ -21,12 +19,12 @@ function myFirstTfjs() {
     const ys = tf.tensor2d([-3, -1, 1, 3, 5, 7], [6, 1]);
   
     // Train the model using the data.
-    model.fit(xs, ys, {epochs: 500});
+    model.fit(xs, ys, {epochs: 250});
   
     // Use the model to do inference on a data point the model hasn't seen.
     // Should print approximately 39.
     var predict=
-        model.predict(tf.tensor2d([20], [1, 1]));
+      model.predict(tf.tensor2d([20], [1, 1]));
 
     console.log( "PREDICT\n", predict );
   }
