@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "@tensorflow/tfjs": "latest",
-    "@tensorflow/tfjs-core": "^0.11.0",
-    "@tensorflow/tfjs-node": "^0.1.2",
-    "gl": "^4.0.4"
+    "@tensorflow/tfjs-core": "latest",
+    "@tensorflow/tfjs-node": "latest"
   }
 }
