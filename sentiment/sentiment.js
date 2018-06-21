@@ -1,7 +1,6 @@
 
 const tf = require('@tensorflow/tfjs');
 require('@tensorflow/tfjs-node');
-tf.setBackend('tensorflow');
 
 var fs = require('fs');
 var performance = require('perf_hooks').performance;
