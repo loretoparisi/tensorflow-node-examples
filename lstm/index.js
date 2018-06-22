@@ -131,6 +131,7 @@ function train() {
                 validationSplit: 0.15,
                 callbacks: {
                     onBatchEnd: (batch, logs) => {
+                        console.log(batch,logs);
                         tf.nextFrame().then(res => {
                             return;
                         })
