@@ -130,12 +130,12 @@ function train() {
                 epochs: 5,
                 validationSplit: 0.15,
                 callbacks: {
-                    onBatchEnd: async (batch, logs) => {
+                    onBatchEnd: (batch, logs) => {
                         tf.nextFrame().then(res => {
                             return;
                         })
                     },
-                    onEpochEnd: async (epoch, logs) => {
+                    onEpochEnd: (epoch, logs) => {
                         // Update the UI to display the current loss and accuracy values.
                         status.train_epoch = epoch + 1;
                         status.train_loss = logs.loss;
