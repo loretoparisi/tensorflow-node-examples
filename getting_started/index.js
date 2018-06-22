@@ -1,3 +1,11 @@
+/**
+ * Tensorflow.js Examples for Node.js
+ * Script adatapted from 
+ * https://github.com/tensorflow/tfjs-examples
+ * https://groups.google.com/a/tensorflow.org/forum/#!forum/tfjs
+ * @author Loreto Parisi (loretoparisi@gmail.com)
+ * @copyright 2018 Loreto Parisi (loretoparisi@gmail.com)
+ */
 require('@tensorflow/tfjs-node');
 var tf = require('@tensorflow/tfjs');
 tf.setBackend('tensorflow');
