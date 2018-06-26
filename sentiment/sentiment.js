@@ -6,8 +6,8 @@
  * @author Loreto Parisi (loretoparisi@gmail.com)
  * @copyright 2018 Loreto Parisi (loretoparisi@gmail.com)
  */
-const tf = require('@tensorflow/tfjs');
 require('@tensorflow/tfjs-node');
+const tf = require('@tensorflow/tfjs');
 
 var fs = require('fs');
 var performance = require('perf_hooks').performance;
@@ -53,7 +53,7 @@ tf.loadModel(model_path)
         console.log(text, "\n", input);
 
         const beginMs = performance.now();
-        const predictOut = model.predict(inputBuffer);
+        const predictOut = model.predict(input);
         const score = predictOut.dataSync()[0];
         predictOut.dispose();
         const endMs = performance.now();
