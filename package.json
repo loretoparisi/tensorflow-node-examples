@@ -9,8 +9,8 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "latest",
-    "@tensorflow/tfjs-core": "latest",
-    "@tensorflow/tfjs-node": "latest"
+    "@tensorflow/tfjs": "^0.12.7",
+    "@tensorflow/tfjs-node": "0.1.17",
+    "node-fetch": "^2.2.0"
   }
 }

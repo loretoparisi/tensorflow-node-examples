@@ -6,13 +6,17 @@
  * @author Loreto Parisi (loretoparisi@gmail.com)
  * @copyright 2018 Loreto Parisi (loretoparisi@gmail.com)
  */
-require('@tensorflow/tfjs-node');
+
+ // The error occurs because tfjs-node currently uses `fetch` to send HTTP requests, but `fetch` is not available in Node.js by default. 
+global.fetch = require('node-fetch');
+
 const tf = require('@tensorflow/tfjs');
+require('@tensorflow/tfjs-node');
 
 var fs = require('fs');
 var performance = require('perf_hooks').performance;
 
-const model_path = 'file://' + __dirname + '/model/model.json';
+const model_path = 'file://./model/model.json';
 const model_metadata = __dirname + '/model/metadata.json';
 
 var text = 'this is a bad day';
