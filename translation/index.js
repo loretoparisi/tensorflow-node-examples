@@ -15,8 +15,8 @@ const tf = require('@tensorflow/tfjs');
 require('@tensorflow/tfjs-node');
 
 
-const model_path = 'file://./model/model.json';
-const model_metadata = __dirname + '/model/metadata.json';
+const model_path = 'file://./model/en-fr/model.json';
+const model_metadata = __dirname + '/model/en-fr/metadata.json';
 
 let Translator = function() {
 
