@@ -24,6 +24,8 @@ var text = 'this is a bad day';
 tf.loadModel(model_path)
     .then(model => {
 
+        model.summary();
+
         let sentimentMetadata = JSON.parse(fs.readFileSync(model_metadata));
         //console.log(sentimentMetadata);
 
