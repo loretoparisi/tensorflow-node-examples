@@ -2,7 +2,7 @@
 [Tensorflow.js](https://github.com/tensorflow/tfjs) Node.js Examples. Inspired from official [tfjs-examples](https://github.com/tensorflow/tfjs-examples).
 
 ## Disclaimer
-Tensorflow.js for Node.js (namely `tfjs-node`) is currently in development status, see [here].
+Tensorflow.js for Node.js (namely `tfjs-node`) is currently in development status, see [here](https://github.com/tensorflow/tfjs-node).
 
 ## Why?
 Because officiale Tensorflow.js examples are mostly written in TypeScript or use the async/awaiy paradigma, while the most of node modules are not.
