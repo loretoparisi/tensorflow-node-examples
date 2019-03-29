@@ -5,7 +5,7 @@
 Tensorflow.js for Node.js (namely `tfjs-node`) is currently in development status, see [here](https://github.com/tensorflow/tfjs-node).
 
 ## Why?
-Because officiale Tensorflow.js examples are mostly written in TypeScript or use the async/awaiy paradigma, while the most of node modules are not.
+Because officiale Tensorflow.js examples are mostly written in TypeScript or use the [async/await ES2017](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) paradigma, while the most of node modules are not.
 
 ## Node.js Examples
 
@@ -23,3 +23,6 @@ A bilinear LSTM (bi-LSTM) for `EN-FR` translation with a local hosted saved mode
 
 ## LSTM Text Generation
 A bi-LSTM model that learns to write as Nietzsche or your favorite text. Work in progress, so far it loads the saved model only.
+
+### Can I convert async/await to Promise
+Yes! Definitively you can. See `async2promise.js`!
