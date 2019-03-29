@@ -5,7 +5,7 @@
 Tensorflow.js for Node.js (namely `tfjs-node`) is currently in development status, see [here].
 
 ## Why?
-Because officiale Tensorflow.js examples are mostyle written in TypeScript or use the async/awaiy paradigma, while the most of node modules are not.
+Because officiale Tensorflow.js examples are mostly written in TypeScript or use the async/awaiy paradigma, while the most of node modules are not.
 
 ## Node.js Examples
 
