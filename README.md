@@ -24,5 +24,5 @@ A bilinear LSTM (bi-LSTM) for `EN-FR` translation with a local hosted saved mode
 ## LSTM Text Generation
 A bi-LSTM model that learns to write as Nietzsche or your favorite text. Work in progress, so far it loads the saved model only.
 
-### Can I convert async/await to Promise
-Yes! Definitively you can. See `async2promise.js`!
+### Can I use async/await without ECMA2017
+Yes! Definitively you can. See `async2promise.js`. You have here defined two function the `__awaiter` and the `__generator`, that mimic the `async` and `await` using a `Promise`. Enjoy ECMA5.
