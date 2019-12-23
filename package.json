@@ -5,11 +5,8 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "private": true,
-  "engines": {
-    "node": ">=8.9.0"
-  },
   "dependencies": {
-    "@tensorflow/tfjs-node": "0.1.17",
+    "@tensorflow/tfjs-node": "latest",
     "node-fetch": "^2.2.0"
   }
 }

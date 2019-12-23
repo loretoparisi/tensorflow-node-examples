@@ -6,8 +6,7 @@
  * @author Loreto Parisi (loretoparisi@gmail.com)
  * @copyright 2018 Loreto Parisi (loretoparisi@gmail.com)
  */
-const tf = require('@tensorflow/tfjs');
-require('@tensorflow/tfjs-node');
+const tf = require('@tensorflow/tfjs-node');
 
 var fs = require('fs');
 var performance = require('perf_hooks').performance;

@@ -11,41 +11,43 @@
 // The error occurs because tfjs-node currently uses `fetch` to send HTTP requests, but `fetch` is not available in Node.js by default. 
 global.fetch = require('node-fetch');
 const fs = require('fs');
-const tf = require('@tensorflow/tfjs');
-require('@tensorflow/tfjs-node');
+const tf = require('@tensorflow/tfjs-node');
 
 
 const model_path = 'file://./model/en-fr/model.json';
 const model_metadata = __dirname + '/model/en-fr/metadata.json';
 
-let Translator = function() {
+let Translator = function () {
+
+    this.loadMetadata = () => {
+
+        const translationMetadata = JSON.parse(fs.readFileSync(model_metadata));
+        this.maxDecoderSeqLength = translationMetadata['max_decoder_seq_length'];
+        this.maxEncoderSeqLength = translationMetadata['max_encoder_seq_length'];
+        console.log('maxDecoderSeqLength = ' + this.maxDecoderSeqLength);
+        console.log('maxEncoderSeqLength = ' + this.maxEncoderSeqLength);
+        this.inputTokenIndex = translationMetadata['input_token_index'];
+        this.targetTokenIndex = translationMetadata['target_token_index'];
+        this.reverseTargetCharIndex =
+            Object.keys(this.targetTokenIndex)
+                .reduce(
+                    (obj, key) => (obj[this.targetTokenIndex[key]] = key, obj), {});
+
+    }
 
     this.loadModel = () => new Promise((resolve, reject) => {
         let self = this;
-        tf.loadModel(model_path)
+        tf.loadLayersModel(model_path)
             .then(model => {
-
                 model.summary();
-
-                const translationMetadata = JSON.parse(fs.readFileSync(model_metadata));
-
-                self.maxDecoderSeqLength = translationMetadata['max_decoder_seq_length'];
-                self.maxEncoderSeqLength = translationMetadata['max_encoder_seq_length'];
-                console.log('maxDecoderSeqLength = ' + self.maxDecoderSeqLength);
-                console.log('maxEncoderSeqLength = ' + self.maxEncoderSeqLength);
-                self.inputTokenIndex = translationMetadata['input_token_index'];
-                self.targetTokenIndex = translationMetadata['target_token_index'];
-                self.reverseTargetCharIndex =
-                    Object.keys(self.targetTokenIndex)
-                        .reduce(
-                            (obj, key) => (obj[self.targetTokenIndex[key]] = key, obj), {});
-                resolve(model)
+                self.loadMetadata();
+                resolve(model);
             })
             .catch(error => {
                 console.error(error)
                 reject(error)
             })
-    });
+    })
 
     this.prepareEncoderModel = (model) => {
         this.numEncoderTokens = model.input[0].shape[2];
@@ -177,9 +179,9 @@ translator.
         translator.prepareEncoderModel(model);
         translator.prepareDecoderModel(model);
 
-        console.log( translator.translate("they're") );
-        console.log( translator.translate("they're cool") );
-        console.log( translator.translate("they're safe") );
+        console.log(translator.translate("they're"));
+        console.log(translator.translate("they're cool"));
+        console.log(translator.translate("they're safe"));
 
     })
 

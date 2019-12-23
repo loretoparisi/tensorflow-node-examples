@@ -10,8 +10,7 @@
  // The error occurs because tfjs-node currently uses `fetch` to send HTTP requests, but `fetch` is not available in Node.js by default. 
 global.fetch = require('node-fetch');
 
-const tf = require('@tensorflow/tfjs');
-require('@tensorflow/tfjs-node');
+const tf = require('@tensorflow/tfjs-node');
 
 var fs = require('fs');
 var performance = require('perf_hooks').performance;
@@ -21,7 +20,7 @@ const model_metadata = __dirname + '/model/metadata.json';
 
 var text = 'this is a bad day';
 
-tf.loadModel(model_path)
+tf.loadLayersModel(model_path)
     .then(model => {
 
         model.summary();
