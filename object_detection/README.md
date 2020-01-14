@@ -11,6 +11,7 @@ node index
 
 You will get boxes predictions from test image:
 
+
 ```javascript
 {
   boxes: [
@@ -27,7 +28,11 @@ You will get boxes predictions from test image:
 }
 ```
 
-and then loaded into `canvas` and saved to a new image `image_test.jpeg`.
+and then loaded into `canvas` and saved to a new image `image_test.jpeg`
+
+<p align="center">
+    <img src="image_test.jpeg?raw=true" width="768"> </br>
+</p>
 
 ## Disclaimer
-Based on https://github.com/tensorflow/tfjs-examples/tree/master/firebase-object-detection-node
+Based on Tensorflow.js example https://github.com/tensorflow/tfjs-examples/tree/master/firebase-object-detection-node
