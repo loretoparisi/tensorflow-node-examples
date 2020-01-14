@@ -36,3 +36,16 @@ and then loaded into `canvas` and saved to a new image `image_test.jpeg`
 
 ## Disclaimer
 Based on Tensorflow.js example https://github.com/tensorflow/tfjs-examples/tree/master/firebase-object-detection-node
+
+## Convert to SavedModel
+To convert a Keras `h5` model to a Tensorflow `pb` SavedModel just run the python script `h52pb.py` with: `python3 h52pb.py keras_model.h5 saved_model_folder`.
+
+This will create the folder `saved_model_folder` with the following structure:
+
+```
+└── saved_model
+    ├── saved_model.pb
+    └── variables
+        ├── variables.data-00000-of-00001
+        └── variables.index
+```
