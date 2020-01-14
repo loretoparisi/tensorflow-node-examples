@@ -9,21 +9,21 @@
 
 const tf = require('@tensorflow/tfjs-node');
 
-var model;
+var model, image;
 const model_path = './model/new_object_detection_1';
-const labels = require('./model/new_object_detection_1/assets/labels.json.js');
-const { createCanvas, loadImage } = require('canvas');
+const labels = require('./model/new_object_detection_1/assets/labels.json');
+const { createCanvas, Image } = require('canvas');
 
 tf.node.loadSavedModel(model_path, ['serve'], 'serving_default')
     .then(res => {
-        model = res;
+        model = res; // LP: loaded TFSavedModel
         console.log(model);
         return tf.node.getMetaGraphsFromSavedModel(model_path);
     })
     .then(modelInfo => {
         console.log(modelInfo);
-        const buf = require('fs').readFileSync('./image.jpeg');
-        const uint8array = new Uint8Array(buf);
+        image = require('fs').readFileSync('./image.jpeg');
+        const uint8array = new Uint8Array(image);
         // Decode the image into a tensor.
         return tf.node.decodeImage(uint8array);
     })
@@ -58,13 +58,18 @@ tf.node.loadSavedModel(model_path, ['serve'], 'serving_default')
         };
         console.log(res);
 
+        // create canvas and context
         const width=1024
         const height=768
         const canvas = createCanvas(width, height);
         const context = canvas.getContext('2d');
-        // Draw cat with lime helmet
-        loadImage('./image.jpeg').then((image) => {
-            context.drawImage(image, 0, 0, width, height);
+
+        // create image from buffer
+        const img = new Image()
+        img.onload = () => {
+            // draw image in context
+            context.drawImage(img, 0, 0, width, height);
+            // draw boxes from model's detection boxes
             for (let i = 0; i < res.boxes.length; i++) {
                 const box = res.boxes[i];
                 context.fillStyle = 'rgba(255,255,255,0.2';
@@ -86,7 +91,9 @@ tf.node.loadSavedModel(model_path, ['serve'], 'serving_default')
             const out =  require('fs').createWriteStream('./image_test.jpeg')
             stream.pipe(out)
             out.on('finish', () =>  console.log('The JPEG file was created.'))
-        })
+        }
+        img.onerror = err => { throw err }
+        img.src = image; // LP: load from image buffer
     })
     .catch(error => {
         console.error(error)
