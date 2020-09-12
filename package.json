@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "@tensorflow/tfjs-node": "latest",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "peaks.js": "^0.16.0",
     "canvas": "latest"
   }
