@@ -1,12 +1,13 @@
 require('@tensorflow/tfjs-node');
 
 const toxicity = require('./lib/toxicity');
+//const toxicity = require('@tensorflow-models/toxicity');
 // The minimum prediction confidence.
 const threshold = 0.9;
 
 // Load the model. Users optionally pass in a threshold and an array of
 // labels to include.
-toxicity.load('./toxicity_model/saved/', threshold).then(model => {
+toxicity.load('./toxicity_model/saved',threshold).then(model => {
   const sentences = ['you suck'];
 
   model.classify(sentences).then(predictions => {

@@ -38,7 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var use = require("@tensorflow-models/universal-sentence-encoder");
 var tfconv = require("@tensorflow/tfjs-converter");
 var tf = require("@tensorflow/tfjs-core");
-const tfjsnode = require('@tensorflow/tfjs-node');
+var tfjsnode = require('@tensorflow/tfjs-node');
 var version_1 = require("./version");
 exports.version = version_1.version;
 function load(path, threshold, toxicityLabels) {
@@ -65,7 +65,7 @@ var ToxicityClassifier = (function () {
         this.toxicityLabels = toxicityLabels;
         this.path = path;
     }
-    ToxicityClassifier.prototype.loadGraphModel = function () {
+    ToxicityClassifier.prototype.loadModel = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2, tfconv.loadGraphModel('https://tfhub.dev/tensorflow/tfjs-model/toxicity/1/default/1', { fromTFHub: true })];

@@ -1,37 +1,39 @@
 {
-  "_from": "@tensorflow-models/toxicity",
+  "_args": [
+    [
+      "@tensorflow-models/toxicity@1.2.2",
+      "/Users/loretoparisi/Documents/Projects/AI/tensorflow-node-examples"
+    ]
+  ],
+  "_from": "@tensorflow-models/toxicity@1.2.2",
   "_id": "@tensorflow-models/toxicity@1.2.2",
   "_inBundle": false,
   "_integrity": "sha512-DSMIoBzNyX7+4D4cGKjsFLbCuJz3bksYpwFHKAjTp4+tmgAGpNyg5nDXXI/IQp18nMTbLKgLruLWOxq5y7P4WQ==",
   "_location": "/@tensorflow-models/toxicity",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "@tensorflow-models/toxicity",
+    "raw": "@tensorflow-models/toxicity@1.2.2",
     "name": "@tensorflow-models/toxicity",
     "escapedName": "@tensorflow-models%2ftoxicity",
     "scope": "@tensorflow-models",
-    "rawSpec": "",
+    "rawSpec": "1.2.2",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "1.2.2"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@tensorflow-models/toxicity/-/toxicity-1.2.2.tgz",
-  "_shasum": "aed2cc92122f2fc949b42502bb55f8ed2e1d03a8",
-  "_spec": "@tensorflow-models/toxicity",
-  "_where": "/Users/loretoparisi/Documents/Projects/AI/tensorflow-node-examples/toxicity-example",
+  "_spec": "1.2.2",
+  "_where": "/Users/loretoparisi/Documents/Projects/AI/tensorflow-node-examples",
   "bugs": {
     "url": "https://github.com/tensorflow/tfjs-models/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "@tensorflow-models/universal-sentence-encoder": "~1.2.2"
   },
-  "deprecated": false,
   "description": "Toxicity model in TensorFlow.js",
   "devDependencies": {
     "@tensorflow/tfjs-converter": "^1.3.3",
